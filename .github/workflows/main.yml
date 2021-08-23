@@ -21,6 +21,5 @@ jobs:
           --authorization ${{ secrets.CONTRAST_PERSONAL_SERVICE_KEY }} \
           --organization_id ${{ secrets.CONTRAST_ORGANIZATION_ID }} \
           --application_id ${{ secrets.CONTRAST_APPLICATION_ID }} \
-          --host ce.contrastsecurity.com
+          --host ce.contrastsecurity.com \
           --language JAVA
-          --project_path $GITHUB_WORKSPACE
