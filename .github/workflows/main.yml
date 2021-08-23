@@ -1,0 +1,20 @@
+name: CI
+on: [push, pull_request]
+
+jobs:
+
+  dependency-scan:
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v1
+        with:
+          submodules: true
+
+      - name: Install contrast-cli
+        run: |
+          npm install @contrast/contrast-cli 
+
+      - name: Run dependency scan
+        run: |
+          npx contrast-cli --api_key $CONTRAST_API_KEY --authorization $CONTRAST_PERSONAL_SERVICE_KEY --organization_id $CONTRAST_ORGANIZATION_ID --application_id $CONTRAST_APPLICATION_ID --host ce.contrastsecurity.com
