@@ -17,9 +17,11 @@ jobs:
 
       - name: Run
         run: |
+          ls
           npx contrast-cli --api_key ${{ secrets.CONTRAST_API_KEY }} \
           --authorization ${{ secrets.CONTRAST_PERSONAL_SERVICE_KEY }} \
           --organization_id ${{ secrets.CONTRAST_ORGANIZATION_ID }} \
           --application_id ${{ secrets.CONTRAST_APPLICATION_ID }} \
           --host ce.contrastsecurity.com
           --language JAVA
+          --project_path .
