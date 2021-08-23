@@ -13,13 +13,12 @@ jobs:
 
       - name: Install contrast-cli
         run: |
-          npm install @contrast/contrast-cli 
+          npm install -g @contrast/contrast-cli 
 
       - name: Run
         run: |
-          npx contrast-cli --api_key ${{ secrets.CONTRAST_API_KEY }} \
+          contrast-cli --api_key ${{ secrets.CONTRAST_API_KEY }} \
           --authorization ${{ secrets.CONTRAST_PERSONAL_SERVICE_KEY }} \
           --organization_id ${{ secrets.CONTRAST_ORGANIZATION_ID }} \
           --application_id ${{ secrets.CONTRAST_APPLICATION_ID }} \
-          --host ce.contrastsecurity.com \
-          --language JAVA
+          --host ce.contrastsecurity.com
